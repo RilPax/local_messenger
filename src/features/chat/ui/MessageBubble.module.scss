@@ -1,0 +1,5 @@
+.message { display: flex; flex-direction: column; width: fit-content; max-width: min(70%, 680px); padding: 10px 12px 8px; border-radius: 16px; background: #232833; box-shadow: 0 4px 16px rgb(0 0 0 / 12%); }
+.own { margin-left: auto; background: #2d5cff; }
+.author { margin-bottom: 4px; color: #97a8ff; font-size: 12px; font-weight: 700; }
+.text { margin: 0; white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.4; }
+.time { align-self: flex-end; margin-top: 4px; color: rgb(255 255 255 / 62%); font-size: 11px; }

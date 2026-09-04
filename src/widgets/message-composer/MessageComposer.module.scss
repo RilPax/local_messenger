@@ -1,0 +1,5 @@
+.form { display: grid; grid-template-columns: 1fr auto; gap: 10px; padding: 14px 18px 18px; border-top: 1px solid #262b35; background: #14171c; }
+.input { width: 100%; min-width: 0; padding: 12px 14px; color: #eef1f6; border: 1px solid #303642; border-radius: 12px; outline: none; background: #1c2028; }
+.input:focus { border-color: #4b70ff; }
+.button { padding: 0 18px; color: white; border: 0; border-radius: 12px; background: #2d5cff; font-weight: 700; }
+.button:disabled { cursor: default; opacity: 0.5; }

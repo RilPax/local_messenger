@@ -1,0 +1,4 @@
+.page { display: grid; grid-template-columns: 300px minmax(0, 1fr); height: 100dvh; }
+.chatColumn { display: grid; grid-template-rows: minmax(0, 1fr) auto; min-width: 0; min-height: 0; }
+.state { height: 100dvh; display: grid; place-items: center; color: #9ba3b2; background: #101216; }
+@media (max-width: 720px) { .page { grid-template-columns: 110px minmax(0, 1fr); } }
