@@ -1,4 +1,4 @@
-import type { Chat, Message, SendMessagePayload, User } from '@/shared/types/chat';
+import type { Chat, Message, SendMessagePayload, User } from '@/Utils/types/chat';
 
 const wait = (ms = 250) => new Promise((resolve) => setTimeout(resolve, ms));
 const users: User[] = [

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { MessageBubble } from '@/features/chat/ui/MessageBubble';
-import type { Chat, Message, User } from '@/shared/types/chat';
+import { MessageBubble } from '@/Components/MessageBubble/MessageBubble';
+import type { Chat, Message, User } from '@/Utils/types/chat';
 import styles from './Conversation.module.scss';
 interface ConversationProps { chat?: Chat; messages: Message[]; users: User[]; loading: boolean; }
 export const Conversation = ({ chat, messages, users, loading }: ConversationProps) => {

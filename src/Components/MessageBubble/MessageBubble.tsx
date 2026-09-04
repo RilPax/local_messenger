@@ -1,5 +1,5 @@
-import type { Message, User } from '@/shared/types/chat';
-import { formatMessageTime } from '@/shared/lib/date';
+import type { Message, User } from '@/Utils/types/chat';
+import { formatMessageTime } from '@/Utils/date';
 import styles from './MessageBubble.module.scss';
 interface MessageBubbleProps { message: Message; author?: User; own: boolean; }
 export const MessageBubble = ({ message, author, own }: MessageBubbleProps) => (

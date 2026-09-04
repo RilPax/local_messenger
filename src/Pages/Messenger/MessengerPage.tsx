@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '@/app/hooks';
-import { loadMessages, loadMessenger, sendMessage } from '@/features/chat/model/chatSlice';
-import { Sidebar } from '@/widgets/sidebar/Sidebar';
-import { Conversation } from '@/widgets/conversation/Conversation';
-import { MessageComposer } from '@/widgets/message-composer/MessageComposer';
+import { useAppDispatch, useAppSelector } from '@/Utils/hooks/redux';
+import { loadMessages, loadMessenger, sendMessage } from '@/Store/Slices/chatSlice';
+import { Sidebar } from '@/Components/Sidebar/Sidebar';
+import { Conversation } from '@/Components/Conversation/Conversation';
+import { MessageComposer } from '@/Components/MessageComposer/MessageComposer';
 import styles from './MessengerPage.module.scss';
 
 export const MessengerPage = () => {

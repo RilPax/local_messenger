@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import type { Chat } from '@/shared/types/chat';
+import type { Chat } from '@/Utils/types/chat';
 import styles from './Sidebar.module.scss';
 interface SidebarProps { chats: Chat[]; }
 export const Sidebar = ({ chats }: SidebarProps) => (

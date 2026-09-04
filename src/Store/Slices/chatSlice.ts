@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { chatApi } from '@/features/chat/api/chatApi';
-import type { Chat, Message, SendMessagePayload, User } from '@/shared/types/chat';
+import { chatApi } from '@/Utils/api/chatApi';
+import type { Chat, Message, SendMessagePayload, User } from '@/Utils/types/chat';
 
 interface ChatState { users: User[]; chats: Chat[]; messagesByChat: Record<string, Message[]>; isBootLoading: boolean; loadingChatId: string | null; sending: boolean; error: string | null; }
 const initialState: ChatState = { users: [], chats: [], messagesByChat: {}, isBootLoading: false, loadingChatId: null, sending: false, error: null };

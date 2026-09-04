@@ -1,5 +1,5 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { MessengerPage } from '@/pages/messenger/MessengerPage';
+import { MessengerPage } from '@/Pages/Messenger/MessengerPage';
 
 export const App = () => (
   <Routes>
