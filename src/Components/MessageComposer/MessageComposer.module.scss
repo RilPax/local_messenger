@@ -1,5 +1,96 @@
-.form { display: grid; grid-template-columns: 1fr auto; gap: 10px; padding: 14px 18px 18px; border-top: 1px solid #262b35; background: #14171c; }
-.input { width: 100%; min-width: 0; padding: 12px 14px; color: #eef1f6; border: 1px solid #303642; border-radius: 12px; outline: none; background: #1c2028; }
-.input:focus { border-color: #4b70ff; }
-.button { padding: 0 18px; color: white; border: 0; border-radius: 12px; background: #2d5cff; font-weight: 700; }
-.button:disabled { cursor: default; opacity: 0.5; }
+@use '@/Styles/variables' as *;
+
+.form {
+  min-height: $composer-height;
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-top: 1px solid $color-border;
+  background: $color-surface;
+}
+
+.input {
+  width: 100%;
+  min-width: 0;
+  height: 46px;
+  padding: 0 15px;
+  color: $color-text-input;
+  border: 1px solid $color-border-input;
+  border-radius: $radius-md;
+  outline: none;
+  background: $color-surface-elevated;
+  transition: border-color 140ms ease, background 140ms ease;
+}
+
+.input::placeholder {
+  color: $color-text-subtle;
+}
+
+.input:focus {
+  border-color: $color-accent-focus;
+  background: #1d2a3b;
+}
+
+.attachButton,
+.sendButton {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border-radius: 50%;
+}
+
+.attachButton {
+  color: $color-text-muted;
+  border: 1px solid $color-border;
+  background: $color-surface-elevated;
+}
+
+.sendButton {
+  color: white;
+  border: 0;
+  background: $color-accent;
+  box-shadow: 0 8px 22px rgb(38 114 255 / 22%);
+}
+
+.attachButton:hover {
+  color: $color-text;
+  background: $color-surface-hover;
+}
+
+.sendButton:not(:disabled):hover {
+  background: $color-accent-hover;
+}
+
+.sendButton:disabled {
+  cursor: default;
+  opacity: 0.45;
+  box-shadow: none;
+}
+
+.attachButton svg,
+.sendButton svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (max-width: 760px) {
+  .form {
+    grid-template-columns: 40px minmax(0, 1fr) 40px;
+    padding-inline: 10px;
+  }
+
+  .attachButton,
+  .sendButton {
+    width: 40px;
+    height: 40px;
+  }
+}
