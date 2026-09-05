@@ -1,17 +1,26 @@
 import { NavLink } from 'react-router-dom';
 import type { Chat } from '@/Utils/types/chat';
 import styles from './Sidebar.module.scss';
+import groupIcon from '@/Assets/icons/group.svg';
+import logoIcon from '@/Assets/icons/logo.svg';
 
 interface SidebarProps {
   chats: Chat[];
 }
 
-const getChatAvatar = (chat: Chat) => chat.memberIds.length > 2 ? '👥' : chat.title.slice(0, 1).toUpperCase();
+const getChatAvatar = (chat: Chat) =>
+  chat.memberIds.length > 2
+    ? groupIcon
+    : chat.title.slice(0, 1).toUpperCase();
+
+const isGroupChat = (chat: Chat) => chat.memberIds.length > 2;
 
 export const Sidebar = ({ chats }: SidebarProps) => (
   <aside className={styles.sidebar}>
     <header className={styles.header}>
-      <div className={styles.brandIcon} aria-hidden="true">💬</div>
+      <div className={styles.brandIcon} aria-hidden="true">
+        <img src={logoIcon} alt="" className={styles.brandImage} />
+      </div>
       <div>
         <h1 className={styles.title}>Local Messenger</h1>
         <span className={styles.subtitle}>Учебный LAN-мессенджер</span>
@@ -25,9 +34,17 @@ export const Sidebar = ({ chats }: SidebarProps) => (
           to={`/chat/${chat.id}`}
           className={({ isActive }) => `${styles.item} ${isActive ? styles.active : ''}`}
         >
-          <div className={`${styles.avatar} ${chat.memberIds.length > 2 ? styles.groupAvatar : ''}`} aria-hidden="true">
-            {getChatAvatar(chat)}
-          </div>
+          <div className={styles.avatar}>
+  {isGroupChat(chat) ? (
+    <img
+      src={groupIcon}
+      alt=""
+      className={styles.avatarIcon}
+    />
+  ) : (
+    chat.title.slice(0, 1).toUpperCase()
+  )}
+</div>
           <div className={styles.content}>
             <div className={styles.topLine}>
               <span className={styles.name}>{chat.title}</span>

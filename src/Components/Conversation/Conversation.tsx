@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { MessageBubble } from '@/Components/MessageBubble/MessageBubble';
 import type { Chat, Message, User } from '@/Utils/types/chat';
+import groupIcon from '@/Assets/icons/group.svg';
 import styles from './Conversation.module.scss';
 
 interface ConversationProps {
@@ -36,7 +37,7 @@ export const Conversation = ({ chat, messages, users, loading }: ConversationPro
     <main className={styles.root}>
       <header className={styles.header}>
         <div className={`${styles.chatAvatar} ${isGroup ? styles.groupAvatar : ''}`} aria-hidden="true">
-          {isGroup ? '👥' : chat.title.slice(0, 1).toUpperCase()}
+          {isGroup ? <img src={groupIcon} alt="" className={styles.avatarIcon} /> : chat.title.slice(0, 1).toUpperCase()}
         </div>
         <div className={styles.headerText}>
           <h2 className={styles.title}>{chat.title}</h2>
