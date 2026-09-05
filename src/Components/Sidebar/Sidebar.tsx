@@ -8,11 +8,6 @@ interface SidebarProps {
   chats: Chat[];
 }
 
-const getChatAvatar = (chat: Chat) =>
-  chat.memberIds.length > 2
-    ? groupIcon
-    : chat.title.slice(0, 1).toUpperCase();
-
 const isGroupChat = (chat: Chat) => chat.memberIds.length > 2;
 
 export const Sidebar = ({ chats }: SidebarProps) => (
@@ -35,16 +30,16 @@ export const Sidebar = ({ chats }: SidebarProps) => (
           className={({ isActive }) => `${styles.item} ${isActive ? styles.active : ''}`}
         >
           <div className={styles.avatar}>
-  {isGroupChat(chat) ? (
-    <img
-      src={groupIcon}
-      alt=""
-      className={styles.avatarIcon}
-    />
-  ) : (
-    chat.title.slice(0, 1).toUpperCase()
-  )}
-</div>
+            {isGroupChat(chat) ? (
+              <img
+                src={groupIcon}
+                alt=""
+                className={styles.avatarIcon}
+              />
+            ) : (
+              chat.title.slice(0, 1).toUpperCase()
+            )}
+          </div>
           <div className={styles.content}>
             <div className={styles.topLine}>
               <span className={styles.name}>{chat.title}</span>
